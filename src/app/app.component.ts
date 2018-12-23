@@ -3,7 +3,7 @@ import {
   ViewChild,
   ViewContainerRef,
   ComponentFactoryResolver,
-  AfterContentInit
+  AfterContentInit,
 } from '@angular/core';
 import { User } from './auth-form/auth-form.interface';
 import { AuthFormComponent } from './auth-form/auth-form.component';
@@ -17,12 +17,14 @@ export class AppComponent implements AfterContentInit {
   @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
   
   constructor(
-    private resolver: ComponentFactoryResolver
+    private resolver: ComponentFactoryResolver,
   ) {}
 
   ngAfterContentInit() {
     const authFormFactory = this.resolver.resolveComponentFactory(AuthFormComponent);
     const component = this.entry.createComponent(authFormFactory);
+    console.log(component.instance);
+    component.instance.title = 'Create account';
   }
 
 }
