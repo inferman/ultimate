@@ -25,6 +25,13 @@ export class AppComponent implements AfterContentInit {
     const component = this.entry.createComponent(authFormFactory);
     console.log(component.instance);
     component.instance.title = 'Create account';
+    // component.instance.submitted.subscribe((data: User) => this.logIn(data));
+    component.instance.submitted.subscribe(this.logIn);
+  }
+
+  logIn(data: User) {
+    console.log(data);
+    
   }
 
 }
