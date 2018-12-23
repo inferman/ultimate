@@ -10,6 +10,7 @@
       <input type="password" name="password" ngModel>
     </label>
     <ng-content select="auth-remember"></ng-content>
+    <div *ngIf="showMessage">You will loged for several days</div>
     <ng-content select="button"></ng-content>
   </form>
 </div>
