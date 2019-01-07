@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+input {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    &:not(last-child) { margin-bottom: 15px; }
+}
+button {
+    &[type="submit"] {
+        background: #BC04C7;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        color: #fff;
+        font-size: 16px;
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }    
+}

@@ -1,1 +1,22 @@
-<div class="">Stock inventory template</div>
+<div class="stock-inventory">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div formGroupName="store" class="stock-inventory__controls">
+            <input 
+                type="text"
+                placeholder="Branch ID"
+                name="branch"
+                formControlName="branch">
+            <input 
+                type="text" 
+                placeholder="Manager Code" 
+                name="code"
+                formControlName="code">
+        </div>
+        <div class="stock-inventory__buttons">
+            <button 
+            type="submit"
+            [disabled]="form.invalid">Order Stock</button>
+        </div>
+        <pre>{{ form.value | json }}</pre>
+    </form>    
+</div>
