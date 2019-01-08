@@ -7,11 +7,13 @@
 
         <stock-selector
             [parent]="form"
-            [products]="products">
+            [products]="products"
+            (added)="addStock($event)">
         </stock-selector>
 
         <stock-products
-            [parent]="form">
+            [parent]="form"
+            (removed)="removeStock($event)">
         </stock-products>
 
         <div class="stock-inventory__buttons">
